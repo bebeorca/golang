@@ -14,7 +14,7 @@ func main(){
 		return c.SendString("Hello, Railway!")
 	})
 
-	app.Get("/", func(c *fiber.Ctx) error{
+	app.Get("/env", func(c *fiber.Ctx) error{
 		return c.SendString("Hello, ENV! " + os.Getenv("TEST_ENV"))
 	})
 
