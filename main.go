@@ -18,6 +18,12 @@ func main(){
 		return c.SendString("Hello, ENV! " + os.Getenv("TEST_ENV"))
 	})
 
+	app.Get("/tjson", func(c *fiber.Ctx) error {
+		return c.Status(200).JSON(fiber.Map{
+		 "message": "Hello",
+		})
+	   })
+
 	port := os.Getenv("PORT")
 
 	if port == ""{
